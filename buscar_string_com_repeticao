@@ -1,0 +1,137 @@
+package Application;
+
+public class program3 {
+	public static int iHASH = 7;
+	public static int iFACTOR = 37;
+	public static String sLETTERS = "acdegilmnoprstuw";
+	public static char[] cLETTERS = {'a','c','d','e','g','i','l','m','n','o','p','r','s','t','u','w'};
+	public static long l = 695527946727L;
+
+	public static long getHash(String s)
+	{
+		long h = iHASH;
+		int lLen = s.length();
+
+	for(int i = 0; i< lLen; i++) 
+	{
+		h = (h * iFACTOR) + sLETTERS.indexOf(s.charAt(i));
+	}
+	return h;
+	}
+
+	public static void main(String[] args) 
+	{
+		procurar(cLETTERS);
+	}
+
+	private static void procurar(char [] vet) 
+	{
+		String sLetra = "";
+		char[] lLetra = new char[vet.length];
+
+		for (char k0 : vet) 
+		{
+			lLetra[0] = k0;
+			sLetra = "";
+			for(char s : lLetra) 
+			{
+				sLetra = sLetra + s;
+			}
+			System.out.println(sLetra.trim());
+			if(getHash(sLetra.trim()) == l) 
+			{
+				System.out.println("ENCONTROU: " + getHash(sLetra.trim()));
+				break;
+			}
+			for (char k1 : vet) 
+			{
+				lLetra[1] = k1;
+				sLetra = "";
+				for(char s : lLetra) 
+				{
+					sLetra = sLetra + s;
+				}
+				System.out.println(sLetra.trim());
+				if(getHash(sLetra.trim()) == l) 
+				{
+					System.out.println("ENCONTROU: " + getHash(sLetra.trim()));
+					break;
+				}
+				for (char k2 : vet) 
+				{
+					lLetra[2] = k2;
+					sLetra = "";
+					for(char s : lLetra) 
+					{
+						sLetra = sLetra + s;
+					}
+					System.out.println(sLetra.trim());
+					if(getHash(sLetra.trim()) == l) 
+					{
+						System.out.println("ENCONTROU: " + getHash(sLetra.trim()));
+						break;
+					}
+					for (char k3 : vet) 
+					{
+						lLetra[3] = k3;
+						sLetra = "";
+						for(char s : lLetra) 
+						{
+							sLetra = sLetra + s;
+						}
+						System.out.println(sLetra.trim());
+						if(getHash(sLetra.trim()) == l) 
+						{
+							System.out.println("ENCONTROU: " + getHash(sLetra.trim()));
+							break;
+						}
+						for (char k4 : vet) 
+						{
+							lLetra[4] = k4;
+							sLetra = "";
+							for(char s : lLetra) 
+							{
+								sLetra = sLetra + s;
+							}
+							System.out.println(sLetra.trim());
+							if(getHash(sLetra.trim()) == l) 
+							{
+								System.out.println("ENCONTROU: " + getHash(sLetra.trim()));
+								break;
+							}
+							for (char k5 : vet) 
+							{
+								lLetra[5] = k5;
+								sLetra = "";
+								for(char s : lLetra) 
+								{
+									sLetra = sLetra + s;
+								}
+								System.out.println(sLetra.trim());
+								if(getHash(sLetra.trim()) == l) 
+								{
+									System.out.println("ENCONTROU: " + getHash(sLetra.trim()));
+									break;
+								}
+								for (char k6 : vet) 
+								{
+									lLetra[6] = k6;
+									sLetra = "";
+									for(char s : lLetra) 
+									{
+										sLetra = sLetra + s;
+									}
+									if(getHash(sLetra.trim()) == l) 
+									{
+										System.out.printf("ENCONTROU UMA PALAVRA DE 7 LETRAS: " + sLetra.trim() + "\nENCONTROU A HASH: " + getHash(sLetra.trim()));
+										System.exit(0);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
